@@ -25,25 +25,40 @@ function operation(a,b,c,d,op){
         case "sum":
             resultRealPart = a + c;
             resultImaginaryPart = b + d;
+            swal({
+                title: "("+ a + "+" + b + "i) + (" + c + " + " + d + "i)" + " = " + resultRealPart + " + (" + resultImaginaryPart + ")i",
+                icon: "success"
+            });
             break;
         case "substraction":
             resultRealPart = a - c;
             resultImaginaryPart = b - d;
+            swal({
+                title: "("+ a + "+" + b + "i) - (" + c + " + " + d + "i)" + " = " + resultRealPart + " + (" + resultImaginaryPart + ")i",
+                icon: "success"
+            });
             break;
         case "multiplication":
             resultRealPart = (a * c) - (b * d);
             resultImaginaryPart = (a * d) + (b * c);
+            swal({
+                title: "("+ a + "+" + b + "i)(" + c + " + " + d + "i)" + " = " + resultRealPart + " + (" + resultImaginaryPart + ")i",
+                icon: "success"
+            });
             break;
         case "division":
             var denominator = (c * c) + (d * d);
             resultRealPart = ((a * c) + (b * d)) / denominator;
             resultImaginaryPart = ((b * c) - (a * d)) / denominator;
+            swal({
+                title: "[("+ a + "+" + b + "i)] / [(" + c + " + " + d + "i)]" + " = " + resultRealPart + " + (" + resultImaginaryPart + ")i",
+                icon: "success"
+            });
             break;
         default:
             alert("RIP, algo salió mal :s");
     }
     graph(resultRealPart,resultImaginaryPart);
-    alert("El resultado es: (" + resultRealPart + ") + (" + resultImaginaryPart + ")i");
 }
 
 //Gráfica
